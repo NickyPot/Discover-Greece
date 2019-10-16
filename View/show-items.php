@@ -1,7 +1,7 @@
 <?php
 
 
-include("Model/api.php") ;
+include("Model/api-items.php") ;
 
 
 $itemTxt = getAllItems();
