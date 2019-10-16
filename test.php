@@ -93,7 +93,8 @@ echo "  <div class='card' style='width: 18rem;'>
   </div>
 
 
-
+  ini_set("display_errors", 1);
+  error_reporting(E_ALL);
 
 
 
