@@ -45,34 +45,29 @@
 
 
 <?php
-//connect to db
-$serverName = "lochnagar.abertay.ac.uk";
-$userName = "sql1704807";
-$password = "7DnkHOYCiHMh";
-$dbName = "sql1704807";
-$conn = new mysqli($serverName, $userName, $password, $dbName);
-//get all the appointments
-$appointmentSql = "SELECT items.itemTitle, items.itemDesc, images.imgAdd, articles.articleTitle, articles.articleTxtAdd
-FROM items
-JOIN imgItem on items.itemID = imgItem.itemID
-JOIN images on imgItem.imgID = images.imgID
-LEFT JOIN articleItem on items.itemID = articleItem.itemID
-LEFT JOIN articles on articleItem.articleID = articles.articleID
-group by items.itemID";
-$appointments = $conn->query($appointmentSql);
 
-$rowVar = 0;
-while ($row = $appointments->fetch_assoc()){
+ini_set("display_errors", 1);
+error_reporting(E_ALL);
+include("Model/api.php") ;
+
+
+$itemTxt = getAllItems();
+
+$itemJson = json_decode($itemTxt);
+$rowVar =  0;
+
+for ($it = 0; $it < sizeof($itemJson); $it++)
+{
 
   if ($rowVar ==  0 || $rowVar ==  3 || $rowVar ==  6 || $rowVar ==  9  )
   {echo "<div class='row'>";}
 //put all the data of the appointments into the table
 echo "  <div class='card' style='width: 18rem;'>
-  <img class='card-img-top' src='" . $row["imgAdd"] . "' alt='Card image'  width = '200' height = '200'>
+  <img class='card-img-top' src='" . $itemJson[$it] -> imgAdd . "' alt='Card image'  width = '200' height = '200'>
   <div class='card-body'>
-    <h4 class='card-title'> " . $row["itemTitle"] . " </h4>
-    <p class='card-text'> " . $row["itemDesc"] . " </p>
-    <a href='". $row["articleTxtAdd"] . "' class='card-link'> ". $row["articleTitle"] . "</a>
+    <h4 class='card-title'> " . $itemJson[$it] -> itemTitle . " </h4>
+    <p class='card-text'> " . $itemJson[$it] -> itemDesc . " </p>
+    <a href='". $itemJson[$it] -> articleTxtAdd . "' class='card-link'> ". $itemJson[$it] -> articleTitle . "</a>
     <a href='#' class='card-link'>Card link</a>
 
   </div>
@@ -80,9 +75,13 @@ echo "  <div class='card' style='width: 18rem;'>
 
   if ($rowVar ==  2 || $rowVar ==  5 || $rowVar ==  8 || $rowVar ==  11  )
   {echo "</div>";}
-  $conn->close();
+//  $conn->close();
   $rowVar++;
+
+
 }
+
+
 ?>
 
 
