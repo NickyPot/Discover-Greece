@@ -12,7 +12,9 @@
 </head>
 
 <body>
-
+<?php
+  session_start();
+?>
   <div>
 
     <!-- source: https://wallpapermemory.com/uploads/705/santorini-wallpaper-1080p-496872.jpg-->
@@ -31,20 +33,37 @@
       <li class="nav-item">
         <a class="nav-link" href="#">Link</a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Link</a>
-      </li>
+      <?php
+        if ($_SESSION["loggedIn"] == true)
+        {
+          echo "  <li class='nav-item'>
+              <a class='nav-link' href='View/login-form.php'>LogIn</a>
+            </li>";
+        }
+
+        else {
+          echo "  <li class='nav-item'>
+              <a class='nav-link' href='/Controller/logout.php'>Log Out</a>
+            </li>";
+        }
+
+      ?>
+
+
     </ul>
 
   </nav>
 
-
-
-  <div class="container">
+<div class="container">
 
 
 <?php
-  include("View/show-items.php");
+
+ini_set("display_errors", 1);
+error_reporting(E_ALL);
+
+
+  include("/home/UAD/1704807/public_html/View/show-items.php");
 ?>
 
 
