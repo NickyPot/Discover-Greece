@@ -1,7 +1,14 @@
 <?php
+
+ini_set("display_errors", 1);
+error_reporting(E_ALL);
+
+$path = $_SERVER['DOCUMENT_ROOT'];
+$path .= "/Model/api-user.php";
+
   session_start();
 
-  include("../Model/api-user.php");
+  include("/home/UAD/1704807/public_html/Model/api-user.php");
 
   $data -> userName = $_POST["username"];
   $data -> userPass = $_POST["password"];
@@ -18,6 +25,9 @@
 else {
       $_SESSION["loggedIn"] = false;
 }
+
+
+header ("Location: /~1704807/index.php");
 
 
 ?>

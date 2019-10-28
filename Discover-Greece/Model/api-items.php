@@ -1,6 +1,6 @@
 <?php
 	// Connect to database
-	include("connection.php");
+	include("/home/UAD/1704807/public_html/Model/connection.php");
 	$db = new dbObj();
 	$conn =  $db->getConnstring();
 

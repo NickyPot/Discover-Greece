@@ -12,13 +12,11 @@
 </head>
 
 <body>
-<?php
-  session_start();
-?>
+
   <div>
 
     <!-- source: https://wallpapermemory.com/uploads/705/santorini-wallpaper-1080p-496872.jpg-->
-    <img class="img-responsive center-block" src="imgs/headerImage2.jpg" alt="header image">
+    <img class="img-responsive center-block" src="/~1704807/imgs/headerImage2.jpg" alt="header image">
   </div>
 
   <nav class="navbar navbar-expand-sm bg-primary navbar-dark">
@@ -34,20 +32,23 @@
         <a class="nav-link" href="#">Link</a>
       </li>
       <?php
-        if ($_SESSION["loggedIn"] == true)
+        session_start();
+
+        if (!isset($_SESSION["loggedIn"]))
         {
           echo "  <li class='nav-item'>
-              <a class='nav-link' href='View/login-form.php'>LogIn</a>
+              <a class='nav-link' href='/~1704807/View/login-form.php'>LogIn</a>
             </li>";
         }
 
-        else {
+        else if (isset($_SESSION["loggedIn"])) {
           echo "  <li class='nav-item'>
-              <a class='nav-link' href='/Controller/logout.php'>Log Out</a>
+              <a class='nav-link' href='/~1704807/Controller/logout.php'>Log Out</a>
             </li>";
         }
 
       ?>
+
 
 
     </ul>
