@@ -3,8 +3,7 @@
 ini_set("display_errors", 1);
 error_reporting(E_ALL);
 
-$path = $_SERVER['DOCUMENT_ROOT'];
-$path .= "/Model/api-user.php";
+
 
   session_start();
 

@@ -82,10 +82,11 @@ echo "  <div class='card' style='width: 18rem;'>
 </div> ";
 
   if ($rowVar ==  2 || $rowVar ==  5 || $rowVar ==  8 || $rowVar ==  11  )
+  {
   {echo "</div>";}
 //  $conn->close();
   $rowVar++;
-}
+  }
 ?>
 
 
