@@ -17,7 +17,8 @@
 		$hashedPass = password_hash($userDets -> userPass, PASSWORD_BCRYPT, $options);
 
 
-		$prepared -> execute();
+		return $prepared -> execute();
+
 
 
   }

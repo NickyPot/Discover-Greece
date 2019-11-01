@@ -17,12 +17,15 @@ $res = createUser($jsonData);
 if ($res==true){
 
   $_SESSION["loggedIn"] = true;
+  header ("Location: /~1704807/index.php");
 }
 
 else {
     $_SESSION["loggedIn"] = false;
+    include("/home/UAD/1704807/public_html/View/create-user-form.php");
+    echo "cant create user exists";
 }
 
 
-header ("Location: /~1704807/index.php");
+
 ?>
