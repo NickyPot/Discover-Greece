@@ -31,7 +31,7 @@ if (empty($_POST["username"]) or empty($_POST["password"]) or empty($_POST["g-re
 
 }
 
-//if not everything was filled out
+//if  everything was filled out
 else
 {
 
@@ -60,7 +60,9 @@ else
 
     //if there is no users
     else {
-          $_SESSION["loggedIn"] = false;
+
+
+        echo "not a user";
     }
 
 
