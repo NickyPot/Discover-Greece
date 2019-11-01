@@ -11,9 +11,11 @@
 		$userDets = json_decode($jsonText);
 
 		$prepared = $conn -> prepare("INSERT INTO users (userName, userPass) VALUES (?, ?) ");
-		$prepared -> bind_param("ss", $userName, $userPass);
+		$prepared -> bind_param("ss", $userName, $hashedPass);
 		$userName = $userDets -> userName;
-		$userPass = $userDets -> userPass;
+		$options =['cost' => 10];
+		$hashedPass = password_hash($userDets -> userPass, PASSWORD_BCRYPT, $options);
+
 
 		$prepared -> execute();
 
@@ -24,17 +26,18 @@
 
 		global $conn;
 		$userDets = json_decode($jsonText);
+		$prepared = $conn -> prepare("SELECT * FROM users where userName = ?");
+		$prepared -> bind_param("s", $userName);
 
-		$prepared = $conn -> prepare("SELECT * FROM users where userName = ? and userPass = ?");
-		$prepared -> bind_param("ss", $userName, $userPass);
 		$userName = $userDets -> userName;
 		$userPass = $userDets -> userPass;
 
 		$prepared -> execute();
 		$result = $prepared ->get_result();
-		$numofUsers = $result -> num_rows;
-		return json_encode($numofUsers);
+		$result = $result -> fetch_assoc();
+	//	echo $result['userPass'];
 
+		return password_verify($userPass, $result['userPass']);
 
 
 

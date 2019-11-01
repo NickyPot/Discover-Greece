@@ -49,13 +49,13 @@ else
       echo "success";
 
       $jsonData = json_encode($data);
-      $res = getUser($jsonData);
-      echo $res;
+
 
     //if there is at least one user
-      if ($res > 0){
+      if (getUser($jsonData)){
 
         $_SESSION["loggedIn"] = true;
+        header ("Location: /~1704807/index.php");
       }
 
     //if there is no users
@@ -66,7 +66,7 @@ else
     }
 
 
-    header ("Location: /~1704807/index.php");
+
 
 
     }
