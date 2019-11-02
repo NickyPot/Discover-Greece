@@ -10,9 +10,10 @@
   	global $conn;
 		$userDets = json_decode($jsonText);
 
-		$prepared = $conn -> prepare("INSERT INTO users (userName, userPass) VALUES (?, ?) ");
-		$prepared -> bind_param("ss", $userName, $hashedPass);
+		$prepared = $conn -> prepare("INSERT INTO users (userName, userPass, phoneNum) VALUES (?, ?, ?) ");
+		$prepared -> bind_param("sss", $userName, $hashedPass, $phoneNum);
 		$userName = $userDets -> userName;
+		$phoneNum = $userDets -> phoneNum;
 		$options =['cost' => 10];
 		$hashedPass = password_hash($userDets -> userPass, PASSWORD_BCRYPT, $options);
 
