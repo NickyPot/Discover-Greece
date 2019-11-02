@@ -44,10 +44,11 @@
 
 
 		<form name ="loginForm" action="../Controller/login.php" method="post" onsubmit = "return loginValidation()">
-			<li>User Name<input type="text" name="username" id="username" /></li>
-			<li>Password<input type="password" name="password" id="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!£$%^&*?#@]).{8,}"/></li>
-			<li id="isChecked"></li>
+			<input type="text" name="username" placeholder="Email" id="username"><br>
+			<input type="password" name="password" id="password" placeholder="Password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!£$%^&*?#@]).{8,}"><br>
+		
 			<div class="g-recaptcha" id="reCaptcha" data-sitekey="6LcOKMAUAAAAAOPE6jQqGjjRQOzbH3jMrxA9CGAT"></div>
+			<input type="submit">
 			<div id="passwordVer">
 				<li id="small" class="invalid">Please include lower case letters in your password!</li>
 				<li id="capital" class="invalid">Please include a capital letter in your password!</li>
@@ -56,7 +57,7 @@
 				<li id="length" class="invalid">Your password needs to be at least 8 characters long!</li>
 			</div>
 
-			<li><input type="submit"></li>
+
 		</form>
 
 </div>
