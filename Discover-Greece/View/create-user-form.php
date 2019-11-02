@@ -43,9 +43,10 @@
 <div class="card">
 
 
-		<form name ="loginForm" action="../Controller/create-user-temp.php" method="post" onsubmit = "return loginValidation()">
+		<form name ="loginForm" action="../Controller/create-user.php" method="post" onsubmit = "return loginValidation()">
 			<input type="text" name="username" placeholder="Email" id="username"><br>
 			<input type="password" name="password" id="password" placeholder="Password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!£$%^&*?#@]).{8,}"><br>
+			<input type="password"  id="passwordConfirm" placeholder="Confirm Your Password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!£$%^&*?#@]).{8,}"><br>
 			<input type="tel" name="phoneNum" id="phoneNum" placeholder="Phone Number">
 			<div class="g-recaptcha" id="reCaptcha" data-sitekey="6LcOKMAUAAAAAOPE6jQqGjjRQOzbH3jMrxA9CGAT"></div>
 			<input type="submit">
