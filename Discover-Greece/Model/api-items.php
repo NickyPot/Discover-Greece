@@ -9,7 +9,7 @@
 
     global $conn;
 
-    $sql = "SELECT items.itemTitle, items.itemDesc, images.imgAdd, articles.articleTitle, articles.articleTxtAdd
+    $sql = "SELECT items.itemTitle, items.itemDesc, images.imgAdd, articles.articleTitle, articles.articleTxtAdd, articles.articleID
     FROM items
     JOIN imgItem on items.itemID = imgItem.itemID
     JOIN images on imgItem.imgID = images.imgID
@@ -24,7 +24,7 @@
     while ($r = mysqli_fetch_assoc($items)) {
 
       $itemDetails[] = $r;
-      // code...
+      
     }
 
     return json_encode($itemDetails);

@@ -20,8 +20,8 @@ echo "  <div class='card' style='width: 18rem;'>
   <div class='card-body'>
     <h4 class='card-title'> " . $itemJson[$it] -> itemTitle . " </h4>
     <p class='card-text'> " . $itemJson[$it] -> itemDesc . " </p>
-    <a href='". $itemJson[$it] -> articleTxtAdd . "' class='card-link'> ". $itemJson[$it] -> articleTitle . "</a>
-    <a href='#' class='card-link'>Card link</a>
+    <a class='card-link'> ". $itemJson[$it] -> articleTitle . "</a>
+    <input type='hidden' id='articleID' value='".  $itemJson[$it] -> articleID . "'>
 
   </div>
 </div> ";

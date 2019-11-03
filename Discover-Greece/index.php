@@ -65,7 +65,7 @@
 </div>
 </div>
 
-<div class="container col-sm-10 order-1 order-xl-12">
+<div id="test" class="container col-sm-10 order-1 order-xl-12">
 
 
 <div class="container">
@@ -89,7 +89,7 @@ error_reporting(E_ALL);
 </div>
 
 
-
+<script src="Controller/articleScripts.js"></script>
 </body>
 
 </html>
