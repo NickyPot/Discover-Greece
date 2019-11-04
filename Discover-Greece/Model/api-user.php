@@ -39,8 +39,14 @@
 		$result = $result -> fetch_assoc();
 	//	echo $result['userPass'];
 
-		return password_verify($userPass, $result['userPass']);
 
+		if(password_verify($userPass, $result['userPass']))
+		{
+			return $result['userID'] ;
+		}
+		else {
+			return false;
+		}
 
 
 

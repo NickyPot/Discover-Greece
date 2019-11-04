@@ -29,18 +29,48 @@ error_reporting(E_ALL);
   $articleJson = getArticleById($articleId);
   $article = json_decode($articleJson);
 
-  echo $article -> articleTitle;
-  echo "<br>";
-  echo $article -> articleAuthor;
-  echo "<br>";
-  include $article -> articleTxtAdd;
-  echo "<br>";
-  echo $article -> articleVidAdd;
 
 
-
+  echo $article[0] -> articleTitle;
+  echo "<br>";
+  echo $article[0] -> articleAuthor;
+  echo "<br>";
+  include $article[0] -> articleTxtAdd;
+  echo "<br>";
+  echo $article[0] -> articleVidAdd;
 
 ?>
+
+<?php
+for ($i=0; $i <sizeof($article) ; $i++) {
+  ?>
+
+  <div class="card">
+    <div class="card-body">
+      <?php echo $article[$i] -> userName;
+            echo $article[$i] -> commentBody;
+      ?>
+    </div>
+
+  </div>
+
+
+
+
+  <?php
+}
+
+?>
+
+
+
+<form  action="/~1704807/Controller/comments.php" method="post">
+  <input type="text" name="commentBody" >
+  <input type="hidden" name="articleId" value="<?php echo $articleId ?>">
+  <br>
+  <input type="submit">
+
+</form>
 
 
 

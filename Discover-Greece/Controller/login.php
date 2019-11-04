@@ -50,11 +50,11 @@ else
 
       $jsonData = json_encode($data);
 
-
+      $userId =getUser($jsonData);
     //if there is at least one user
-      if (getUser($jsonData)){
+      if ($userId != false){
 
-        $_SESSION["loggedIn"] = true;
+        $_SESSION["loggedIn"] = $userId;
         header ("Location: /~1704807/index.php");
       }
 
