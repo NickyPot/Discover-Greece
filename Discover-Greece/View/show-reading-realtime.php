@@ -32,7 +32,7 @@ echo "internal: " . $state -> internal . " external: " . $state -> external . " 
 		<h1>Meter Reads</h1>
 	</div>
 
-	<div data-role="content">
+	<div id="test"  data-role="content">
 		<ul>
   <li> <?php echo "internal: " . $state -> internal ?></li>
   <li> <?php echo "external: " . $state -> external ?></li>
@@ -44,6 +44,8 @@ echo "internal: " . $state -> internal . " external: " . $state -> external . " 
 
 
 </div>
+
+<script src="../Controller/reading-scripts.js"></script>
 
 </body>
 </html>

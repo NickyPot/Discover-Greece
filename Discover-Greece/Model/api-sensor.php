@@ -45,4 +45,26 @@
 
   }
 
+
+
+	function getTenLastReadigs(){
+
+		global $conn;
+
+		$sql = "SELECT * FROM reading ORDER BY timeAdded DESC LIMIT 10";
+
+		$items = mysqli_query($conn, $sql);
+
+		$itemDetails = array();
+
+		while ($r = mysqli_fetch_assoc($items)) {
+
+			$readings[] = $r;
+
+		}
+
+		return json_encode($readings);
+
+	}
+
   ?>

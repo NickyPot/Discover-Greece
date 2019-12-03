@@ -31,4 +31,26 @@ function getArticleById($articleId)
 }
 
 
+
+function getFiveLastArticles()
+{
+	global $conn;
+
+	$sql = "SELECT * FROM `articles` ORDER BY `dateAdded` ASC LIMIT 5";
+
+	$articles = mysqli_query($conn, $sql);
+
+
+
+	while ($r = mysqli_fetch_assoc($articles)) {
+
+		$article[] = $r;
+
+	}
+
+	return json_encode(	$article);
+
+
+}
+
 ?>
