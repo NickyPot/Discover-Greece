@@ -34,9 +34,9 @@ error_reporting(E_ALL);
 
 
 
-  echo $article[0] -> articleTitle;
+  echo "<h1>" . $article[0] -> articleTitle . "</h1>";
   echo "<br>";
-  echo $article[0] -> articleAuthor;
+  echo "<strong>From: " . $article[0] -> articleAuthor . "</strong>";
   echo "<br>";
   include $article[0] -> articleTxtAdd;
   echo "<br>";
