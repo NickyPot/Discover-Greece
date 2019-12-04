@@ -1,16 +1,4 @@
-// this will get the article address and open the article page when the article link is clicked
-$(document).ready(function(){
 
-  $(".card-link").click(function(){
-
-    var articleID = document.getElementById("articleID").value;
-    openArticle(articleID);
-
-
-
-  });
-
-});
 
 
 

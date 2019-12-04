@@ -24,10 +24,13 @@ error_reporting(E_ALL);
 
 
   include("/home/UAD/1704807/public_html/Model/api-article.php");
+  include("/home/UAD/1704807/public_html/Model/api-comments.php");
 
   $articleId = $_GET['articleId'];
   $articleJson = getArticleById($articleId);
+  $articleJsonComments = getCommentsByArticleId($articleId);
   $article = json_decode($articleJson);
+  $comments = json_decode($articleJsonComments);
 
 
 
@@ -42,13 +45,13 @@ error_reporting(E_ALL);
 ?>
 
 <?php
-for ($i=0; $i <sizeof($article) ; $i++) {
+for ($i=0; $i <sizeof($comments) ; $i++) {
   ?>
 
   <div class="card">
     <div class="card-body">
-      <?php echo $article[$i] -> userName;
-            echo $article[$i] -> commentBody;
+      <?php echo $comments[$i] -> userName;
+            echo $comments[$i] -> commentBody;
       ?>
     </div>
 
