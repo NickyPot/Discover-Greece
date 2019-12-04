@@ -63,6 +63,7 @@
 
     ?>
 </div>
+
 </div>
 
 <div id="test" class="container col-sm-10 order-1 order-xl-12">
@@ -91,5 +92,19 @@ error_reporting(E_ALL);
 
 <script src="Controller/articleScripts.js"></script>
 </body>
+
+<footer>
+
+
+    <div class='card' id="weather-widget">
+  <?php
+  include ("/home/UAD/1704807/public_html/View/weather-widget.php");
+  ?>
+</div>
+
+
+  </div>
+
+</footer>
 
 </html>

@@ -1,4 +1,7 @@
 <?php
+
+ini_set("display_errors", 1);
+error_reporting(E_ALL);
 	// Connect to database
 	include("/home/UAD/1704807/public_html/Model/connection.php");
 	$db = new dbObj();
@@ -24,11 +27,59 @@
     while ($r = mysqli_fetch_assoc($items)) {
 
       $itemDetails[] = $r;
-      
+
     }
 
     return json_encode($itemDetails);
 
   }
+
+
+	function getItemById($itemId)
+	{
+		global $conn;
+
+
+	  $prepared = $conn -> prepare("SELECT * FROM items where itemID = ?");
+	  $prepared ->bind_param("i", $itemId);
+	  $prepared ->execute();
+	  $result = $prepared ->get_result();
+
+	  $itemArray = array();
+
+	  while($temp = $result -> fetch_assoc())
+	  {
+	    $itemArray[] = $temp;
+
+	  }
+
+	  return json_encode($itemArray);
+	}
+
+
+	function createItem()
+	{
+		global $conn;
+		$data = json_decode(file_get_contents('php://input'), true);//get the data from POST
+		$itemTitle = $data["itemTitle"];
+		$itemDesc = $data["itemDesc"];
+
+		$prepared = $conn -> prepare("INSERT INTO items (itemTitle, itemDesc) VALUES (?, ?)");
+		$prepared ->bind_param("ss", $itemTitle, $itemDesc);
+
+		if($prepared ->execute())
+		{
+			echo "item was succesfully created!";
+
+		}
+		else
+		{
+			"Item creation failed!";
+
+
+		}
+
+
+	}
 
   ?>

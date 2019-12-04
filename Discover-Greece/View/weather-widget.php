@@ -7,7 +7,7 @@ $xmltxt = file_get_contents('http://weather-broker-cdn.api.bbci.co.uk/en/forecas
 $xml = simplexml_load_string($xmltxt);
 
 
-$xsl = simplexml_load_file("xslst.xsl") ;
+$xsl = simplexml_load_file("/home/UAD/1704807/public_html/View/xslst.xsl") ;
 $proc = new XSLTProcessor();
 $proc->importStyleSheet($xsl);
 $result = $proc->transformtoXML($xml) ;
