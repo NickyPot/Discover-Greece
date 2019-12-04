@@ -43,14 +43,14 @@ error_reporting(E_ALL);
   echo $article[0] -> articleVidAdd;
 
 ?>
-
+<div class="card">
 <?php
 for ($i=0; $i <sizeof($comments) ; $i++) {
   ?>
 
   <div class="card">
     <div class="card-body">
-      <?php echo $comments[$i] -> userName;
+      <?php  echo "<strong>" . $comments[$i] -> userName . ":</strong> ";
             echo $comments[$i] -> commentBody;
       ?>
     </div>
@@ -66,10 +66,10 @@ for ($i=0; $i <sizeof($comments) ; $i++) {
 ?>
 
 
-
-<form  action="/~1704807/Controller/comments.php" method="post">
-  <input type="text" name="commentBody" >
+<form class="commentSection" action="/~1704807/Controller/comments.php" method="post">
+  <p>Leave a Comment: </p><input type="text" name="commentBody" >
   <input type="hidden" name="articleId" value="<?php echo $articleId ?>">
+  <br>
   <br>
   <input type="submit">
 
@@ -79,6 +79,7 @@ for ($i=0; $i <sizeof($comments) ; $i++) {
 
 
 
+</div>
 </div>
 
 
