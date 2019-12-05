@@ -1,8 +1,4 @@
 <?php
-	// Connect to database
-
-
-
 
 //gets the article details along with associated comments
 function createComment($jsonText)

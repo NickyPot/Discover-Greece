@@ -20,6 +20,13 @@ error_reporting(E_ALL);
 
   session_start();
 
+  // Connect to database
+  include("/home/UAD/1704807/public_html/Model/connection.php");
+  $db = new dbObj();
+  $conn =  $db->getConnstring();
+
+
+
   include("/home/UAD/1704807/public_html/Model/api-user.php");
 
 //if the email, password or reCaptcha have NOT been filled out then do this

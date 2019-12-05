@@ -1,12 +1,5 @@
 <?php
 
-ini_set("display_errors", 1);
-error_reporting(E_ALL);
-	// Connect to database
-	include("/home/UAD/1704807/public_html/Model/connection.php");
-	$db = new dbObj();
-	$conn =  $db->getConnstring();
-
 //this will give you all the items along with their details and one of their images. It is used for the homepage cards
   function getAllItems(){
 

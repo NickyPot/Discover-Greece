@@ -3,6 +3,14 @@
 ini_set("display_errors", 1);
 error_reporting(E_ALL);
 
+
+// Connect to database
+include("/home/UAD/1704807/public_html/Model/connection.php");
+$db = new dbObj();
+$conn =  $db->getConnstring();
+
+
+
 include("/home/UAD/1704807/public_html/Model/api-sensor.php");
 
 $json = getTenLastReadigs();
@@ -54,7 +62,7 @@ echo min ($voltage);
 	<div data-role="header">
 		<h1>Meter Reads</h1>
 	</div>
-	
+
 	<div data-role="content">
 	<?php
 for ($i =0; $i < 10; $i++)
@@ -74,23 +82,23 @@ for ($i =0; $i < 10; $i++)
 }
 
 ?>
-	
+
 	<div id ="chartContainer1" style="width: 45%; height: 300px;display: inline-block;">
-		
+
 	</div>
 
 	<div id ="chartContainer2" style="width: 45%; height: 300px;display: inline-block;">
-		
+
 	</div>
 
 	<div id ="chartContainer3" style="width: 45%; height: 300px;display: inline-block;">
-		
+
 	</div>
-	
+
 	<div id ="chartContainer4" style="width: 45%; height: 300px;display: inline-block;">
-		
+
 	</div>
-	
+
 	</div>
 
 </div>
