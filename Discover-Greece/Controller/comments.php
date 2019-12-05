@@ -24,12 +24,15 @@ error_reporting(E_ALL);
   echo $jsonCommnent;
   if(createComment($jsonCommnent))
   {
-    echo "success";
+    $_SESSION['comment'] = "<script type='text/javascript'>alert('Your comment was posted successfully!');</script>";
+    header ("Location: /~1704807/index.php");
+
 
   }
 
   else {
-    echo "failed";
+    $_SESSION['comment'] = "<script type='text/javascript'>alert('Your comment was not posted due to an error!');</script>";
+    header ("Location: /~1704807/index.php");
   }
 
 

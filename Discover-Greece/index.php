@@ -102,6 +102,14 @@ error_reporting(E_ALL);
     <div class='card' id="weather-widget">
   <?php
   include ("/home/UAD/1704807/public_html/View/weather-widget.php");
+  if(isset($_SESSION["comment"]))
+  {
+    echo $_SESSION["comment"];
+    unset($_SESSION["comment"]);
+
+  }
+
+
   ?>
 </div>
 
