@@ -1,8 +1,8 @@
 function loginValidation()
 {
-  var username = document.getElementById('username');
-  var password = document.getElementById('password');
-  var passwordConfirm = document.getElementById('passwordConfirm');
+  var username = document.getElementById('username').value;
+  var password = document.getElementById('password').value;
+  var passwordConfirm = document.getElementById('passwordConfirm').value;
 
   //regexpression is used to check if the email format conforms with standard email rules
   var mailRegExpression = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
@@ -24,6 +24,7 @@ function loginValidation()
 
   else {
     alert('The password you have entered does not match!');
+
     return false;
   }
 
