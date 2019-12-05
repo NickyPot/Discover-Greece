@@ -1,7 +1,10 @@
 <?php
+// Connect to database
+include("/home/UAD/1704807/public_html/Model/connection.php");
+$db = new dbObj();
+$conn =  $db->getConnstring();
 
-ini_set("display_errors", 1);
-error_reporting(E_ALL);
+
 
     header("Content-Type: application/rss+xml; charset=ISO-8859-1");
     include("/home/UAD/1704807/public_html/Model/api-article.php");

@@ -46,7 +46,7 @@ passwordField.onfocus = function(){
 
 }
 
-//hides the password guidlines if the user is NOT in the password field
+//hides the password guidelines if the user is NOT in the password field
 passwordField.onblur = function(){
 
   document.getElementById('passwordVer').style.display = "none";

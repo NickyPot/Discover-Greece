@@ -16,7 +16,7 @@ $rowVar =  0;
 
 for ($it = 0; $it < sizeof($itemJson); $it++)
 {
-
+//this will loop through the items and create the grid layout
   if ($rowVar ==  0 || $rowVar ==  3 || $rowVar ==  6 || $rowVar ==  9  )
   {echo "<div class='row'>";}
 //put all the data of the appointments into the table

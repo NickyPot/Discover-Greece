@@ -1,0 +1,690 @@
+<h1><span style="font-weight: 400;">Week 2</span></h1>
+<p><span style="font-weight: 400;">The following tables were created using the PHPMyAdmin Print View function.</span></p>
+<h1><strong>items</strong></h1>
+<table>
+<tbody>
+<tr>
+<td>
+<p><strong>Column</strong></p>
+</td>
+<td>
+<p><strong>Type</strong></p>
+</td>
+<td>
+<p><strong>Null</strong></p>
+</td>
+<td>
+<p><strong>Default</strong></p>
+</td>
+<td>
+<p><strong>Links to</strong></p>
+</td>
+<td>
+<p><strong>Comments</strong></p>
+</td>
+</tr>
+<tr>
+<td>
+<p><span style="font-weight: 400;">itemID </span><em><span style="font-weight: 400;">(Primary)</span></em></p>
+</td>
+<td>
+<p><span style="font-weight: 400;">int(11)</span></p>
+</td>
+<td>
+<p><span style="font-weight: 400;">No&nbsp;</span></p>
+</td>
+<td>
+<p><span style="font-weight: 400;">&nbsp;</span></p>
+</td>
+<td>
+<p><span style="font-weight: 400;">&nbsp;</span></p>
+</td>
+<td>
+<p><span style="font-weight: 400;">&nbsp;</span></p>
+</td>
+</tr>
+<tr>
+<td>
+<p><span style="font-weight: 400;">itemTitle</span></p>
+</td>
+<td>
+<p><span style="font-weight: 400;">varchar(100)</span></p>
+</td>
+<td>
+<p><span style="font-weight: 400;">Yes&nbsp;</span></p>
+</td>
+<td>
+<p><em><span style="font-weight: 400;">NULL</span></em><span style="font-weight: 400;">&nbsp;</span></p>
+</td>
+<td>
+<p><span style="font-weight: 400;">&nbsp;</span></p>
+</td>
+<td>
+<p><span style="font-weight: 400;">&nbsp;</span></p>
+</td>
+</tr>
+<tr>
+<td>
+<p><span style="font-weight: 400;">itemDesc</span></p>
+</td>
+<td>
+<p><span style="font-weight: 400;">varchar(300)</span></p>
+</td>
+<td>
+<p><span style="font-weight: 400;">Yes&nbsp;</span></p>
+</td>
+<td>
+<p><em><span style="font-weight: 400;">NULL</span></em><span style="font-weight: 400;">&nbsp;</span></p>
+</td>
+<td>
+<p><span style="font-weight: 400;">&nbsp;</span></p>
+</td>
+<td>
+<p><span style="font-weight: 400;">&nbsp;</span></p>
+</td>
+</tr>
+</tbody>
+</table>
+<h1><strong>articleItem</strong></h1>
+<table>
+<tbody>
+<tr>
+<td>
+<p><strong>Column</strong></p>
+</td>
+<td>
+<p><strong>Type</strong></p>
+</td>
+<td>
+<p><strong>Null</strong></p>
+</td>
+<td>
+<p><strong>Default</strong></p>
+</td>
+<td>
+<p><strong>Links to</strong></p>
+</td>
+</tr>
+<tr>
+<td>
+<p><span style="font-weight: 400;">itemID</span></p>
+</td>
+<td>
+<p><span style="font-weight: 400;">int(11)</span></p>
+</td>
+<td>
+<p><span style="font-weight: 400;">Yes&nbsp;</span></p>
+</td>
+<td>
+<p><em><span style="font-weight: 400;">NULL</span></em><span style="font-weight: 400;">&nbsp;</span></p>
+</td>
+<td>
+<p><span style="font-weight: 400;">items -&gt; itemID&nbsp;</span></p>
+</td>
+</tr>
+<tr>
+<td>
+<p><span style="font-weight: 400;">articleID</span></p>
+</td>
+<td>
+<p><span style="font-weight: 400;">int(11)</span></p>
+</td>
+<td>
+<p><span style="font-weight: 400;">Yes&nbsp;</span></p>
+</td>
+<td>
+<p><em><span style="font-weight: 400;">NULL</span></em><span style="font-weight: 400;">&nbsp;</span></p>
+</td>
+<td>
+<p><span style="font-weight: 400;">articles -&gt; articleID&nbsp;</span></p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+<h1><strong>articles</strong></h1>
+<table>
+<tbody>
+<tr>
+<td>
+<p><strong>Column</strong></p>
+</td>
+<td>
+<p><strong>Type</strong></p>
+</td>
+<td>
+<p><strong>Null</strong></p>
+</td>
+<td>
+<p><strong>Default</strong></p>
+</td>
+<td>
+<p><strong>Links to</strong></p>
+</td>
+</tr>
+<tr>
+<td>
+<p><span style="font-weight: 400;">articleID </span><em><span style="font-weight: 400;">(Primary)</span></em></p>
+</td>
+<td>
+<p><span style="font-weight: 400;">int(11)</span></p>
+</td>
+<td>
+<p><span style="font-weight: 400;">No&nbsp;</span></p>
+</td>
+<td>
+<p><span style="font-weight: 400;">&nbsp;</span></p>
+</td>
+<td>
+<p><span style="font-weight: 400;">&nbsp;</span></p>
+</td>
+</tr>
+<tr>
+<td>
+<p><span style="font-weight: 400;">articleTitle</span></p>
+</td>
+<td>
+<p><span style="font-weight: 400;">varchar(200)</span></p>
+</td>
+<td>
+<p><span style="font-weight: 400;">Yes&nbsp;</span></p>
+</td>
+<td>
+<p><em><span style="font-weight: 400;">NULL</span></em><span style="font-weight: 400;">&nbsp;</span></p>
+</td>
+<td>
+<p><span style="font-weight: 400;">&nbsp;</span></p>
+</td>
+</tr>
+<tr>
+<td>
+<p><span style="font-weight: 400;">articleAuthor</span></p>
+</td>
+<td>
+<p><span style="font-weight: 400;">varchar(100)</span></p>
+</td>
+<td>
+<p><span style="font-weight: 400;">Yes&nbsp;</span></p>
+</td>
+<td>
+<p><em><span style="font-weight: 400;">NULL</span></em><span style="font-weight: 400;">&nbsp;</span></p>
+</td>
+<td>
+<p><span style="font-weight: 400;">&nbsp;</span></p>
+</td>
+</tr>
+<tr>
+<td>
+<p><span style="font-weight: 400;">articleTxtAdd</span></p>
+</td>
+<td>
+<p><span style="font-weight: 400;">varchar(300)</span></p>
+</td>
+<td>
+<p><span style="font-weight: 400;">Yes&nbsp;</span></p>
+</td>
+<td>
+<p><em><span style="font-weight: 400;">NULL</span></em><span style="font-weight: 400;">&nbsp;</span></p>
+</td>
+<td>
+<p><span style="font-weight: 400;">&nbsp;</span></p>
+</td>
+</tr>
+<tr>
+<td>
+<p><span style="font-weight: 400;">articleVidAdd</span></p>
+</td>
+<td>
+<p><span style="font-weight: 400;">varchar(300)</span></p>
+</td>
+<td>
+<p><span style="font-weight: 400;">Yes&nbsp;</span></p>
+</td>
+<td>
+<p><em><span style="font-weight: 400;">NULL</span></em><span style="font-weight: 400;">&nbsp;</span></p>
+</td>
+<td>
+<p><span style="font-weight: 400;">&nbsp;</span></p>
+</td>
+</tr>
+<tr>
+<td>
+<p><span style="font-weight: 400;">dateAdded</span></p>
+</td>
+<td>
+<p><span style="font-weight: 400;">timestamp</span></p>
+</td>
+<td>
+<p><span style="font-weight: 400;">No&nbsp;</span></p>
+</td>
+<td>
+<p><span style="font-weight: 400;">CURRENT_TIMESTAMP&nbsp;</span></p>
+</td>
+<td>
+<p><span style="font-weight: 400;">&nbsp;</span></p>
+</td>
+</tr>
+<tr>
+<td>
+<p><span style="font-weight: 400;">articleLink</span></p>
+</td>
+<td>
+<p><span style="font-weight: 400;">varchar(200)</span></p>
+</td>
+<td>
+<p><span style="font-weight: 400;">No&nbsp;</span></p>
+</td>
+<td>
+<p><span style="font-weight: 400;">&nbsp;</span></p>
+</td>
+<td>
+<p><span style="font-weight: 400;">&nbsp;</span></p>
+</td>
+</tr>
+<tr>
+<td>
+<p><span style="font-weight: 400;">articleDescription</span></p>
+</td>
+<td>
+<p><span style="font-weight: 400;">varchar(200)</span></p>
+</td>
+<td>
+<p><span style="font-weight: 400;">No&nbsp;</span></p>
+</td>
+<td>
+<p><span style="font-weight: 400;">&nbsp;</span></p>
+</td>
+<td>
+<p><span style="font-weight: 400;">&nbsp;</span></p>
+</td>
+</tr>
+</tbody>
+</table>
+<h1><strong>imgItem</strong></h1>
+<table>
+<tbody>
+<tr>
+<td>
+<p><strong>Column</strong></p>
+</td>
+<td>
+<p><strong>Type</strong></p>
+</td>
+<td>
+<p><strong>Null</strong></p>
+</td>
+<td>
+<p><strong>Default</strong></p>
+</td>
+<td>
+<p><strong>Links to</strong></p>
+</td>
+</tr>
+<tr>
+<td>
+<p><span style="font-weight: 400;">itemID</span></p>
+</td>
+<td>
+<p><span style="font-weight: 400;">int(11)</span></p>
+</td>
+<td>
+<p><span style="font-weight: 400;">Yes&nbsp;</span></p>
+</td>
+<td>
+<p><em><span style="font-weight: 400;">NULL</span></em><span style="font-weight: 400;">&nbsp;</span></p>
+</td>
+<td>
+<p><span style="font-weight: 400;">items -&gt; itemID&nbsp;</span></p>
+</td>
+</tr>
+<tr>
+<td>
+<p><span style="font-weight: 400;">imgID</span></p>
+</td>
+<td>
+<p><span style="font-weight: 400;">int(11)</span></p>
+</td>
+<td>
+<p><span style="font-weight: 400;">Yes&nbsp;</span></p>
+</td>
+<td>
+<p><em><span style="font-weight: 400;">NULL</span></em><span style="font-weight: 400;">&nbsp;</span></p>
+</td>
+<td>
+<p><span style="font-weight: 400;">images -&gt; imgID&nbsp;</span></p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+<h1><strong>imgArticle</strong></h1>
+<table>
+<tbody>
+<tr>
+<td>
+<p><strong>Column</strong></p>
+</td>
+<td>
+<p><strong>Type</strong></p>
+</td>
+<td>
+<p><strong>Null</strong></p>
+</td>
+<td>
+<p><strong>Default</strong></p>
+</td>
+<td>
+<p><strong>Links to</strong></p>
+</td>
+</tr>
+<tr>
+<td>
+<p><span style="font-weight: 400;">itemID</span></p>
+</td>
+<td>
+<p><span style="font-weight: 400;">int(11)</span></p>
+</td>
+<td>
+<p><span style="font-weight: 400;">Yes&nbsp;</span></p>
+</td>
+<td>
+<p><em><span style="font-weight: 400;">NULL</span></em><span style="font-weight: 400;">&nbsp;</span></p>
+</td>
+<td>
+<p><span style="font-weight: 400;">article-&gt; articleID&nbsp;</span></p>
+</td>
+</tr>
+<tr>
+<td>
+<p><span style="font-weight: 400;">imgID</span></p>
+</td>
+<td>
+<p><span style="font-weight: 400;">int(11)</span></p>
+</td>
+<td>
+<p><span style="font-weight: 400;">Yes&nbsp;</span></p>
+</td>
+<td>
+<p><em><span style="font-weight: 400;">NULL</span></em><span style="font-weight: 400;">&nbsp;</span></p>
+</td>
+<td>
+<p><span style="font-weight: 400;">images -&gt; imgID&nbsp;</span></p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+<h1><strong>images</strong></h1>
+<table>
+<tbody>
+<tr>
+<td>
+<p><strong>Column</strong></p>
+</td>
+<td>
+<p><strong>Type</strong></p>
+</td>
+<td>
+<p><strong>Null</strong></p>
+</td>
+<td>
+<p><strong>Default</strong></p>
+</td>
+<td>
+<p><strong>Links to</strong></p>
+</td>
+</tr>
+<tr>
+<td>
+<p><span style="font-weight: 400;">imgID </span><em><span style="font-weight: 400;">(Primary)</span></em></p>
+</td>
+<td>
+<p><span style="font-weight: 400;">int(11)</span></p>
+</td>
+<td>
+<p><span style="font-weight: 400;">No&nbsp;</span></p>
+</td>
+<td>
+<p><span style="font-weight: 400;">&nbsp;</span></p>
+</td>
+<td>
+<p><span style="font-weight: 400;">&nbsp;</span></p>
+</td>
+</tr>
+<tr>
+<td>
+<p><span style="font-weight: 400;">imgAdd</span></p>
+</td>
+<td>
+<p><span style="font-weight: 400;">varchar(300)</span></p>
+</td>
+<td>
+<p><span style="font-weight: 400;">Yes&nbsp;</span></p>
+</td>
+<td>
+<p><em><span style="font-weight: 400;">NULL</span></em><span style="font-weight: 400;">&nbsp;</span></p>
+</td>
+<td>
+<p><span style="font-weight: 400;">&nbsp;</span></p>
+</td>
+</tr>
+<tr>
+<td>
+<p><span style="font-weight: 400;">imgTitle</span></p>
+</td>
+<td>
+<p><span style="font-weight: 400;">varchar(200)</span></p>
+</td>
+<td>
+<p><span style="font-weight: 400;">Yes&nbsp;</span></p>
+</td>
+<td>
+<p><em><span style="font-weight: 400;">NULL</span></em><span style="font-weight: 400;">&nbsp;</span></p>
+</td>
+<td>
+<p><span style="font-weight: 400;">&nbsp;</span></p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+<h1><strong>users</strong></h1>
+<table>
+<tbody>
+<tr>
+<td>
+<p><strong>Column</strong></p>
+</td>
+<td>
+<p><strong>Type</strong></p>
+</td>
+<td>
+<p><strong>Null</strong></p>
+</td>
+<td>
+<p><strong>Default</strong></p>
+</td>
+<td>
+<p><strong>Links to</strong></p>
+</td>
+<td>
+<p><strong>Comments</strong></p>
+</td>
+</tr>
+<tr>
+<td>
+<p><span style="font-weight: 400;">userID </span><em><span style="font-weight: 400;">(Primary)</span></em></p>
+</td>
+<td>
+<p><span style="font-weight: 400;">int(11)</span></p>
+</td>
+<td>
+<p><span style="font-weight: 400;">No&nbsp;</span></p>
+</td>
+<td>
+<p><span style="font-weight: 400;">&nbsp;</span></p>
+</td>
+<td>
+<p><span style="font-weight: 400;">&nbsp;</span></p>
+</td>
+<td>
+<p><span style="font-weight: 400;">&nbsp;</span></p>
+</td>
+</tr>
+<tr>
+<td>
+<p><span style="font-weight: 400;">userName</span></p>
+</td>
+<td>
+<p><span style="font-weight: 400;">varchar(100)</span></p>
+</td>
+<td>
+<p><span style="font-weight: 400;">Yes&nbsp;</span></p>
+</td>
+<td>
+<p><em><span style="font-weight: 400;">NULL</span></em><span style="font-weight: 400;">&nbsp;</span></p>
+</td>
+<td>
+<p><span style="font-weight: 400;">&nbsp;</span></p>
+</td>
+<td>
+<p><span style="font-weight: 400;">&nbsp;</span></p>
+</td>
+</tr>
+<tr>
+<td>
+<p><span style="font-weight: 400;">userPass</span></p>
+</td>
+<td>
+<p><span style="font-weight: 400;">varchar(200)</span></p>
+</td>
+<td>
+<p><span style="font-weight: 400;">Yes&nbsp;</span></p>
+</td>
+<td>
+<p><em><span style="font-weight: 400;">NULL</span></em><span style="font-weight: 400;">&nbsp;</span></p>
+</td>
+<td>
+<p><span style="font-weight: 400;">&nbsp;</span></p>
+</td>
+<td>
+<p><span style="font-weight: 400;">&nbsp;</span></p>
+</td>
+</tr>
+<tr>
+<td>
+<p><span style="font-weight: 400;">phoneNum</span></p>
+</td>
+<td>
+<p><span style="font-weight: 400;">varchar(13)</span></p>
+</td>
+<td>
+<p><span style="font-weight: 400;">Yes&nbsp;</span></p>
+</td>
+<td>
+<p><em><span style="font-weight: 400;">NULL</span></em><span style="font-weight: 400;">&nbsp;</span></p>
+</td>
+<td>
+<p><span style="font-weight: 400;">&nbsp;</span></p>
+</td>
+<td>
+<p><span style="font-weight: 400;">&nbsp;</span></p>
+</td>
+</tr>
+</tbody>
+</table>
+<h1><strong>comments</strong></h1>
+<table>
+<tbody>
+<tr>
+<td>
+<p><strong>Column</strong></p>
+</td>
+<td>
+<p><strong>Type</strong></p>
+</td>
+<td>
+<p><strong>Null</strong></p>
+</td>
+<td>
+<p><strong>Default</strong></p>
+</td>
+<td>
+<p><strong>Links to</strong></p>
+</td>
+</tr>
+<tr>
+<td>
+<p><span style="font-weight: 400;">commentID </span><em><span style="font-weight: 400;">(Primary)</span></em></p>
+</td>
+<td>
+<p><span style="font-weight: 400;">int(11)</span></p>
+</td>
+<td>
+<p><span style="font-weight: 400;">No&nbsp;</span></p>
+</td>
+<td>
+<p><span style="font-weight: 400;">&nbsp;</span></p>
+</td>
+<td>
+<p><span style="font-weight: 400;">&nbsp;</span></p>
+</td>
+</tr>
+<tr>
+<td>
+<p><span style="font-weight: 400;">commentBody</span></p>
+</td>
+<td>
+<p><span style="font-weight: 400;">varchar(300)</span></p>
+</td>
+<td>
+<p><span style="font-weight: 400;">Yes&nbsp;</span></p>
+</td>
+<td>
+<p><em><span style="font-weight: 400;">NULL</span></em><span style="font-weight: 400;">&nbsp;</span></p>
+</td>
+<td>
+<p><span style="font-weight: 400;">&nbsp;</span></p>
+</td>
+</tr>
+<tr>
+<td>
+<p><span style="font-weight: 400;">userID</span></p>
+</td>
+<td>
+<p><span style="font-weight: 400;">int(11)</span></p>
+</td>
+<td>
+<p><span style="font-weight: 400;">Yes&nbsp;</span></p>
+</td>
+<td>
+<p><em><span style="font-weight: 400;">NULL</span></em><span style="font-weight: 400;">&nbsp;</span></p>
+</td>
+<td>
+<p><span style="font-weight: 400;">users -&gt; userID&nbsp;</span></p>
+</td>
+</tr>
+<tr>
+<td>
+<p><span style="font-weight: 400;">articleID</span></p>
+</td>
+<td>
+<p><span style="font-weight: 400;">int(11)</span></p>
+</td>
+<td>
+<p><span style="font-weight: 400;">Yes&nbsp;</span></p>
+</td>
+<td>
+<p><em><span style="font-weight: 400;">NULL</span></em><span style="font-weight: 400;">&nbsp;</span></p>
+</td>
+<td>
+<p><span style="font-weight: 400;">articles -&gt; articleID&nbsp;</span></p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+<p><span style="font-weight: 400;">One of the biggest drawbacks of relational databases is the fact that they do not scale well when it comes to big data sets. For example, should the present website add a large number of users and articles, retrieving results based on IDs would increase latency to the point where user experience would be impacted negatively.</span></p>
+<p><span style="font-weight: 400;">Another weakness of the relational database model is the inability to quickly adapt to change due to their fixed schemas. Should the developer of this website decide to change its structure it would add a huge overhead in development time, due to the database model.</span></p>
+<p><span style="font-weight: 400;">Lastly, JOINS can become very complicated in a relational database, which can increase development time and cost.&nbsp;</span></p>
+<p>&nbsp;</p>

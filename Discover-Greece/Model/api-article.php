@@ -6,7 +6,12 @@ function getArticleById($articleId)
   global $conn;
 
 //using prepared beacause hackers could change the id that is taken from the items page
-  $prepared = $conn -> prepare("SELECT * FROM articles where articleID = ?");
+  $prepared = $conn -> prepare("SELECT images.imgAdd, articles.articleID, articles.articleTitle, articles.articleAuthor, articles.articleTxtAdd, articles.articleLink, articles.articleDescription
+    FROM articles
+    JOIN articleImg on articles.articleID = articleImg.imgID
+    JOIN images on articleImg.imgID = images.imgID
+    where articles.articleID =?
+    ");
   $prepared ->bind_param("i", $articleId);
   $prepared ->execute();
   $result = $prepared ->get_result();

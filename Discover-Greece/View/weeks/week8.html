@@ -1,0 +1,9 @@
+<h1><span style="font-weight: 400;">Week 8</span></h1>
+
+<img src="/~1704807/imgs/week8diagram.png" alt="">
+
+<p><span style="font-weight: 400;">The electric imp first collects the data using its four sensors and converts it to the desired units, using the calculation method provided by the developer. Then, the device sends it to the agent on the electricimp.com servers. The agents then sends the data in JSON format to the php script which is located on a page on the mayar server of Abertay University. The script then utilises a function which takes the data, breaks it down to device Id and sensor data and then sends it to the database. The database then takes that data in and also records when the data was inserted.</span></p>
+<h1>&nbsp;</h1>
+<p><span style="font-weight: 400;">The main advantage of using JSON to store the sensor data instead of 3NF is how compact the code needed to insert and retrieve that data would be. If each piece of the sensor data was stored in a different column, the developer would have to type out all of the column names in order to get all the data. However, with JSON the developer can retrieve only the sensor data field and use that JSON string to display that data in any part of the website.</span></p>
+<h1>&nbsp;</h1>
+<p><span style="font-weight: 400;">The application works&nbsp; very well as the data is stored without any delay and errors.</span></p>

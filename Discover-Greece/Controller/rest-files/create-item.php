@@ -1,5 +1,5 @@
 <?php
-	//  complete the CURL
+//this file will trigger the post switch in the items.php file and create an item with the data provided
 	$url = "https://mayar.abertay.ac.uk/~1704807/Controller/items.php" ;
 
 	$data = '{"itemTitle": "Larissa", "itemDesc": "A city in Greece"}' ;

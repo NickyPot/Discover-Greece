@@ -1,7 +1,7 @@
 
 
 
-
+// this ajax function is used to display the articles without changing pages
 function openArticle(articleID)
 {
 var xmlhttp = new XMLHttpRequest();

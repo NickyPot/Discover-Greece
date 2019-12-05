@@ -1,8 +1,6 @@
 <?php
 
-ini_set("display_errors", 1);
-error_reporting(E_ALL);
-	//  complete the CURL
+//this file will trigget the get switch in the items.php file and get all items
 	$url = "https://mayar.abertay.ac.uk/~1704807/Controller/items.php?" ;
 
 	$curl = curl_init($url) ;

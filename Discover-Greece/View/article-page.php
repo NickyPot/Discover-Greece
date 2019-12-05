@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-  <title>Bootstrap 4 Example</title>
+  <title>Discover Greece</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
@@ -48,6 +48,7 @@ $conn =  $db->getConnstring();
   include $article[0] -> articleTxtAdd;
   echo "<br>";
   echo $article[0] -> articleVidAdd;
+  echo "<img src='" . $article[0] -> imgAdd. "' alt=''>"
 
 ?>
 <div class="card">
@@ -72,7 +73,12 @@ for ($i=0; $i <sizeof($comments) ; $i++) {
 
 ?>
 
+<?php
+session_start();
 
+if (isset($_SESSION['loggedIn'])) {
+
+?>
 <form class="commentSection" action="/~1704807/Controller/comments.php" method="post">
   <p>Leave a Comment: </p><input type="text" name="commentBody" >
   <input type="hidden" name="articleId" value="<?php echo $articleId ?>">
@@ -81,6 +87,13 @@ for ($i=0; $i <sizeof($comments) ; $i++) {
   <input type="submit">
 
 </form>
+
+<?php
+
+}
+
+?>
+
 
 
 

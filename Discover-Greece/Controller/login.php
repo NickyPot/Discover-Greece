@@ -15,8 +15,6 @@
 <body>
 <?php
 
-ini_set("display_errors", 1);
-error_reporting(E_ALL);
 // Connect to database
 include("/home/UAD/1704807/public_html/Model/connection.php");
 $db = new dbObj();
